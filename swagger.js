@@ -5,7 +5,7 @@ const doc = {
         title: 'Fire Dept API',
         description: 'API for managing Fire Department data'
     },
-    host: 'cse341-final-project-zhdg.onrender.com',
+    host: 'https://cse341-final-project-58w8.onrender.com',
     schemes: ['https']
 };
 const outputFile = './swagger.json';
