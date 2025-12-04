@@ -5,10 +5,11 @@
     "description": "API for managing Fire Department data",
     "version": "1.0.0"
   },
-  "host": "https://cse341-final-project-58w8.onrender.com",
+  "host": "cse341-final-project-58w8.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {
