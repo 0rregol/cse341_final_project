@@ -9,7 +9,9 @@ validate.volunteerRules = () => {
     body('lastName').notEmpty().withMessage('Last name is required'),
     body('email').isEmail().withMessage('Must be a valid email address'),
     body('badgeNumber').notEmpty().withMessage('Badge number is required'),
-    body('stationId').notEmpty().withMessage('Station ID is required')
+    body('rank').notEmpty().withMessage('Rank is required'),
+    body('stationId').notEmpty().withMessage('Station ID is required'),
+    body('bloodType').notEmpty().withMessage('Blood Type is required') 
   ];
 };
 

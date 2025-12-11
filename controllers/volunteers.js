@@ -39,11 +39,10 @@ const createVolunteer = async (req, res) => {
       email: req.body.email,
       badgeNumber: req.body.badgeNumber,
       rank: req.body.rank,
-      stationId: req.body.stationId
+      stationId: req.body.stationId,
+      bloodType: req.body.bloodType 
     };
-    
     const response = await mongodb.getDatabase().connection.db.collection('volunteers').insertOne(volunteer);
-    
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
@@ -57,7 +56,7 @@ const createVolunteer = async (req, res) => {
 const updateVolunteer = async (req, res) => {
   try {
     if (!ObjectId.isValid(req.params.id)) {
-      return res.status(400).json('Must use a valid contact id to update a volunteer.');
+      return res.status(400).json('Must use a valid volunteer id to update.');
     }
     const userId = new ObjectId(req.params.id);
     const volunteer = {
@@ -66,11 +65,11 @@ const updateVolunteer = async (req, res) => {
       email: req.body.email,
       badgeNumber: req.body.badgeNumber,
       rank: req.body.rank,
-      stationId: req.body.stationId
+      stationId: req.body.stationId,
+      bloodType: req.body.bloodType
     };
-    
     const response = await mongodb.getDatabase().connection.db.collection('volunteers').replaceOne({ _id: userId }, volunteer);
-    
+    console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();
     } else {
